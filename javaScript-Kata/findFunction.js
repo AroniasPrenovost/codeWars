@@ -1,22 +1,73 @@
 function domainName(url){
-// http
-var res = url.slice(7);
 
-// https
-var nes = url.slice(8);
+var One = url.slice(12);
 
-// www.
-var bes = url.slice(4);
+var Two = url.slice(11);
 
-var y = url.includes("www.");
-var n = url.includes("http:");
+var Three = url.slice(8);
 
-// if url started with one of those ^
-if (n = true) {
-	return res.split('.')[0];
-} else if (y = true) {
-	return bes.split('.')[0];
-} else {
-	return nes.split('.')[0];
+var Four = url.slice(7);
+
+var Five = url.slice(4);
+
+var Six = url.slice(0);
+
+  if (url.includes("s:\//www")) {
+return One.split('.')[0]; 
+   } else if (url.includes("p:\//www")) {
+return Two.split('.')[0];
+  } else if (url.includes("ps:")) {
+return Three.split('.')[0];
+  } else if (url.includes("ttp:")) {
+return Four.split('.')[0];
+  } else if (url.includes("www.")) {
+return Five.split('.')[0];
+  } else  {
+  	return Six.split('.')[0];;
+  }
 }
-}
+
+domainName("https://catshitfffff.com");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
