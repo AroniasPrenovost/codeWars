@@ -27,7 +27,7 @@ return Five.split('.')[0];
   }
 }
 
-domainName("https://catshitfffff.com");
+domainName("https://thisisatesturl.com");
 
 
 
