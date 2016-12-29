@@ -12,3 +12,6 @@ function generateHashtag (str) {
 }
 generateHashtag("This is my string");
 // "#ThisIsMyString"
+
+
+

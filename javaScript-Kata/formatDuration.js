@@ -330,13 +330,10 @@ formatDuration(9990);
 // just need to refine time to years 
 // 
 function formatDuration (seconds) {
-
-
-
         years = Math.floor(seconds / 31536000);
         days = Math.floor((seconds % 31536000) / 86400);
         hours = Math.floor(((seconds % 31536000) % 86400) / 3600);
-        minutes = Math.floor((((seconds % 31536000) % 86400) % 3600) / 60);
+        minutes = ((((seconds % 31536000) % 86400) % 3600) / 60);
         seconds = (((seconds % 31536000) % 86400) % 3600) % 60;
 
 
@@ -416,7 +413,7 @@ if (days > 364) {
 // ->>> complete ^^^^^
 
 // hours
-if (seconds > 3599) {
+if (hours > 0) {
 	answer.push(hours + h);
 } else {
 	equalsZero.push(hours + h);
@@ -426,13 +423,14 @@ if (seconds > 3599) {
 if (seconds > 59) {
 	answer.push(minutes + m);
 } else {
-	equalsZero.push(seconds + s);
+	equalsZero.push(minutes + m);
 }
 
-if (seconds < 1) {
-return "now";
+if (seconds > 1) {
+		return equalsZero.toString()/*.replace(",", " ")*/;
+
 } else {
-	return equalsZero.toString().replace(",", " ");
+return "now";
 }
 
 
@@ -440,8 +438,6 @@ return "now";
 
 formatDuration(9990);
 // "1 minute", "40 seconds"
-
-
 
 
 
