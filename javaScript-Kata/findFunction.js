@@ -1,15 +1,10 @@
 function domainName(url){
-
+  
 var One = url.slice(12);
-
 var Two = url.slice(11);
-
 var Three = url.slice(8);
-
 var Four = url.slice(7);
-
 var Five = url.slice(4);
-
 var Six = url.slice(0);
 
   if (url.includes("s:\//www")) {
