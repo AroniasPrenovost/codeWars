@@ -1,14 +1,13 @@
-// Complete the solution so that it reverses all of the 
-// words within the string passed in.
+// Write a function that reverses the order of words in a sentance
 
 function reverseWords(str){
   return str.split("").join("").split(" ").reverse().join(" ");
 }
-
 reverseWords("Hey there, this is Aron.");
+// returns "Aron. is this there, Hey"
 
-// str.split("") turns the string into an array of substrings
-// .join("") combines elements of an array + converts to string
+// str.split("") converts string to array of substrings
+// .join("") combines array substrings 
 // .split(" ") adds spaces 
-// .reverse() reverses element order 
-// .join(" ") converts it back to a string again 
+// .reverse() reverses order of each element 
+// .join(" ") converts the array back to a string

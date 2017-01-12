@@ -1,5 +1,4 @@
 function generateHashtag (str) {
-
 	if (str.length + 1 > 140) {
 		return false;
 	} else if (str.length > 0) {
@@ -8,10 +7,9 @@ function generateHashtag (str) {
 	} else {
 		return false;
 	}
-
 }
 generateHashtag("This is my string");
-// "#ThisIsMyString"
+// returns "#ThisIsMyString"
 
 
 

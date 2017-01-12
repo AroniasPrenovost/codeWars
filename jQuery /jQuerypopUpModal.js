@@ -1,20 +1,5 @@
 // javascript popup modal using jQuery
 
-
-<!-- HTML -->
-
-<button id="modal">click here</button>
-
-<!-- CSS -->
-
-.popup {
-  width: 200px;
-  height:200px;
-  background-color: red;
-}
-
-<!-- jQuery -->
-
 // attaches a click event to id and calls function  
 $("#modal").click(function() {
 

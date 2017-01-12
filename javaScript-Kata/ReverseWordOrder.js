@@ -1,19 +1,16 @@
-// reverse the order of each inidividual word in a string
+// Write a function that reverses the order of words in a sentance
+// and the order of the letters within each word. 
 
 function reverseWords(str) {
   sentance = str.split("").reverse().join("").split(" ").reverse().join(" ");
 return sentance;
 }
 reverseWords("hey there, this is aron");
+// returns "yeh ,ereht siht si nora"
 
-// str.split("") turns the string into an array of substrings
+// str.split("") converts string to array of substrings
 // .reverse() reverses the order of the array elements 
-// .join("") combines elements of an array + converts to string
-// .split(" ") adds the spaces back in 
-// .reverse() reverses each element in the array 
-// .join(" ") converts it back to a string again 
-
-
-
-
-
+// .join("") combines array substrings 
+// .split(" ") adds spaces 
+// .reverse() reverses order of array elements 
+// .join(" ") converts the array to string

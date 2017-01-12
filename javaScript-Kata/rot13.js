@@ -1,5 +1,7 @@
-function rot13(message) {
+// return a string with every character is replaced with the 
+// 13th letter from that character in the alphabet 
 
+function rotate13(message) {
   var output = '';
   for (var i = 0; i < message.length; i ++) {
     var c = message[i];
@@ -14,8 +16,8 @@ function rot13(message) {
   }
   return output;
 };
-
-rot13("testtt");
+rotate13("aesttt");
+// returns "nrfggg"
 
 
 

@@ -1,3 +1,5 @@
+// produce an array of the prime numbers and the integer itself 
+
 function prime(num) {
     var primes = [];
     var news = [];
@@ -24,3 +26,4 @@ function prime(num) {
 }
 
 prime(11);
+// returns [2, 3, 5, 7, 11]
