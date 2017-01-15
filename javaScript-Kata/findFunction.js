@@ -22,7 +22,6 @@ return url.slice(4).split('.')[0];
   	return url.slice(0).split('.')[0];
   }
 }
-
 domainName("https://thisisatesturl.com");
 // returns "thisisatesturl"
 

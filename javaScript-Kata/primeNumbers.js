@@ -24,6 +24,5 @@ function prime(num) {
     var hmm = stringer.map(Number);
     return hmm;
 }
-
 prime(11);
 // returns [2, 3, 5, 7, 11]

@@ -13,6 +13,5 @@ var changeOrder = function (arr) {
   }
   return list;
 }
-
 changeOrder([1, 4, 3, 2, 4, 3, 1, 2, 3, 0, 8, 0]);
 // return [1, 4, 3, 2, 4, 3, 1, 2, 3, 8, 0, 0]

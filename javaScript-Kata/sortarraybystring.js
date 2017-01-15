@@ -7,3 +7,5 @@ function sortByLength(array) {
   {return a.length - b.length;});
 return array;
 };
+sortByLength(["This should be index 1.", "What?", "This is one of the sentances."]);
+// returns ["What?", "This should be index 1.", "This is one of the sentances."]
