@@ -3,64 +3,47 @@
 // Removes any query string parameters specified within the 
 // 2nd argument (optional array)
 
-
-function stripUrlParams(url, paramsToStrip){
-// complete me
-
-// if url contains query string
-if (url.split("?").length - 1 > 0) {
-
-// turns paramsToString to string
-var pString = paramsToStrip.toString(); 
-
-// returns query string
-var qString = url.substring(url.indexOf(".com") + 4); 
-// make qString 8 characters max - double checks
-var length = 8;
-var trimmedString = qString.substring(0, length);
-
-// removes paramsToStrip matches
-var x = trimmedString.split(pString).join('');
-// return x;
-
+function stripUrlParams(url, paramsToStrip) {
+// find query string and formats to max length
+var rawQstring = url.substring(url.indexOf(".com") + 4);
+var qStringLength = 8;
+var qString = rawQstring.substring(0, qStringLength);
 // removes query string
 var plainUrl = url.substring(0, url.indexOf("?"));
-
-
-
+// turns paramsToString to string
+var pString = paramsToStrip.toString(); 
+// removes paramsToStrip matches
+var x = qString.split(pString).join('');
+// if 1st or 2nd = "=", then remove + 2
 var first = x.charAt(1);
+// only true if
 var second = x.charAt(4);
-
-
-// return "yes " + hasDuplicates;
-// if querystring contains pString happens more than once 
-
-
-// if both variables match parameters, don't return query string 
- if (first && second === "=") {
-
- var finalq = trimmedString.slice(0, 9);
-	return plainUrl + finalq;
-} else if (first === "=") {
-	var bindex = 1; var eindex = 4;
-	var finalq = x.slice(0, bindex) + x.slice(eindex);
-	return plainUrl + finalq;
-// if first area is a match
-} else if (second === "=") {
-	var finalq = x.split('&')[0];
-	return plainUrl + finalq;
+// only true if previous ins't a match
+var third = x.charAt(5);
+if (qString.length > 7) {
+//	return true;   // test
+if (first === "=" && second === "=") {
+	return plainUrl;
+} else if (first !== "=" && third === "=") {   // correct
+	var fLength = 4;
+	var fString = qString.substring(0, fLength);
+	return plainUrl + fString;
+} else if (first === "=" && second !== "=" ) { // correct 
+	var sString = qString.substring(5, fLength);
+	return plainUrl + "?" + sString;
 } else {
-	var finalq = x;
-	return plainUrl + finalq;
+	var zLength = 4;
+	var yString = qString.substring(0, zLength);
+	return plainUrl + yString;
 }
-
-// if ir doesn't contain query string
+} else if (qString.length > 0) {
+	if (first === "=") {
+		return plainUrl;
+	} return url;
 } else {
-	return url;
+// when there is no qString
+return url;     // test
+	}
 }
-
-}
-stripUrlParams("www.chat.com?a=1&a=1", ["a"]);
-
-// still needs to account for a query string that look slike "?a=1&a=2"
-
+stripUrlParams("www.chat.com?a=1&a=2", ["b"]);
+// "www.chat.com?a=1"
