@@ -10,25 +10,22 @@ var qStringLength = 8;
 var qString = rawQstring.substring(0, qStringLength);
 // removes query string
 var plainUrl = url.substring(0, url.indexOf("?"));
-// turns paramsToString to string
-var pString = paramsToStrip.toString(); 
 // removes paramsToStrip matches
-var x = qString.split(pString).join('');
+var x = qString.split(paramsToStrip).join('');
 // if 1st or 2nd = "=", then remove + 2
 var first = x.charAt(1);
-// only true if
+// only true if previous is a match 
 var second = x.charAt(4);
 // only true if previous ins't a match
 var third = x.charAt(5);
 if (qString.length > 7) {
-//	return true;   // test
 if (first === "=" && second === "=") {
 	return plainUrl;
-} else if (first !== "=" && third === "=") {   // correct
+} else if (first !== "=" && third === "=") {   
 	var fLength = 4;
 	var fString = qString.substring(0, fLength);
 	return plainUrl + fString;
-} else if (first === "=" && second !== "=" ) { // correct 
+} else if (first === "=" && second !== "=" ) { 
 	var sString = qString.substring(5, fLength);
 	return plainUrl + "?" + sString;
 } else {
@@ -41,8 +38,7 @@ if (first === "=" && second === "=") {
 		return plainUrl;
 	} return url;
 } else {
-// when there is no qString
-return url;     // test
+return url;     
 	}
 }
 stripUrlParams("www.chat.com?a=1&a=2", ["b"]);
