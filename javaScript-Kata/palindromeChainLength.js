@@ -5,31 +5,20 @@
 // until the resulting number is a palindrome.
 
 // If the input number is already a palindrome, the number of steps is 0.
-
 // Input will always be a positive integer.
 
-
 var palindromeChainLength = function(n) {
+// checks if number is a palindrome - returns boolean value (t/f)
+var bvalue = n == n.split("").reverse().join(""); 
+if (bvalue === true) {
+return 0;
 
-// checks if number is a palindrome - returns boolean value (t/f) 
- function checkPalindrom(n) {
- var bvalue = n == n.split("").reverse().join(""); // get the boolean value external of the function 
-}
-
-if (bvalue = true) {
-return "this is a palindrome";
-} else { // keep checking 
-return "this isn\'t at all!"; 
+} else {
+	return "it isn\'t a palindrome";
 	}
-}; // close function 
-palindromeChainLength("2002");
+}; // close function
+palindromeChainLength("2044102");
+"false"
 
-
-
-
-// for reference - thsi gives me a boolean value 
-function checkPalindrom(n) {
- return n == n.split("").reverse().join("");
-}
-checkPalindrom("2002");
-// true
+// need to count how many times it calculates and attach 
+// that to non-palindrome numbers 
