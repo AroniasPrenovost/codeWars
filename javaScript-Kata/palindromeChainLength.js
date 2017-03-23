@@ -8,17 +8,16 @@
 // Input will always be a positive integer.
 
 var palindromeChainLength = function(n) {
+// set step calculation ("step count") variable 
+var stepCount = 0;
 // checks if number is a palindrome - returns boolean value (t/f)
-var bvalue = n == n.split("").reverse().join(""); 
-if (bvalue === true) {
-return 0;
-
-} else {
-	return "it isn\'t a palindrome";
-	}
-}; // close function
-palindromeChainLength("2044102");
-"false"
-
-// need to count how many times it calculates and attach 
-// that to non-palindrome numbers 
+var pvalue = parseInt((n + '').split("").reverse().join("")); 
+    while (pvalue !== n) { // if the number isn't a palindorme
+      n = parseInt(n) + parseInt(pvalue); // add the value of n to the pvalue 
+      pvalue = parseInt((n + '').split('').reverse().join(''));
+      ++stepCount; // repeat the process if it is still not a palindrome 
+    }
+    return stepCount; // how many times did it take until we got to palindrome? 
+}; 
+palindromeChainLength(2044102);
+// "false"
