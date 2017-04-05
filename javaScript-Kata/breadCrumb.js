@@ -14,15 +14,15 @@ var two = arrayElements[1];
 var three = arrayElements[2];
 var four = arrayElements[3];
 var finalString = ["<a href=\"/\">HOME</a>"];
+
 // --------------- ONE ------------------------ // 
 if (one !== undefined) {
 	if (one.length > 30) {
-var subs = one.split("-"); // turn it to array of substrings
-var filtArray = subs.filter(function(a){return a !== "the" && a !== "of" && a !== "in" && a !== "from" && a !== "by" && a !== "with" && a !== "and" && a !== "or" && a !== "for" && a !== "to" && a !== "at" && a !== "a" });
+var subs = one.split("-").filter(function(a){return a !== "the" && a !== "of" && a !== "in" && a !== "from" && a !== "by" && a !== "with" && a !== "and" && a !== "or" && a !== "for" && a !== "to" && a !== "at" && a !== "a" });
 // return newarr;
 var acronimyze = [];
-for( var i=0; i<filtArray.length; i++ ) {
-	acronimyze.push( filtArray[i].charAt(0) );
+for( var i=0; i<subs.length; i++ ) {
+	acronimyze.push( subs[i].charAt(0) );
 }
 var acronymn1 = acronimyze.join().replace(/,/g, "").toUpperCase();
 } else {
@@ -33,14 +33,12 @@ finalString.push(onee);
 } 
 // --------------- TWO ------------------------ // 
 if (two !== undefined) {
-
 	if (two.length > 30) {
-var subs = two.split("-"); // turn it to array of substrings
-var filtArray = subs.filter(function(a){return a !== "the" && a !== "of" && a !== "in" && a !== "from" && a !== "by" && a !== "with" && a !== "and" && a !== "or" && a !== "for" && a !== "to" && a !== "at" && a !== "a" });
+var subs = two.split("-").filter(function(a){return a !== "the" && a !== "of" && a !== "in" && a !== "from" && a !== "by" && a !== "with" && a !== "and" && a !== "or" && a !== "for" && a !== "to" && a !== "at" && a !== "a" });
 // return newarr;
 var acronimyze = [];
-for( var i=0; i<filtArray.length; i++ ) {
-	acronimyze.push( filtArray[i].charAt(0) );
+for( var i=0; i<subs.length; i++ ) {
+	acronimyze.push( subs[i].charAt(0) );
 }
 var acronymn2 = acronimyze.join().replace(/,/g, "").toUpperCase();
 } else {
@@ -52,12 +50,11 @@ finalString.push(twoo);
 // --------------- THREE ------------------------ // 
 if (three !== undefined) {
 	if (three.length > 30) {
-var subs = three.split("-"); // turn it to array of substrings
-var filtArray = subs.filter(function(a){return a !== "the" && a !== "of" && a !== "in" && a !== "from" && a !== "by" && a !== "with" && a !== "and" && a !== "or" && a !== "for" && a !== "to" && a !== "at" && a !== "a" });
+var subs = three.split("-").filter(function(a){return a !== "the" && a !== "of" && a !== "in" && a !== "from" && a !== "by" && a !== "with" && a !== "and" && a !== "or" && a !== "for" && a !== "to" && a !== "at" && a !== "a" });
 // return newarr;
 var acronimyze = [];
-for( var i=0; i<filtArray.length; i++ ) {
-	acronimyze.push( filtArray[i].charAt(0) );
+for( var i=0; i<subs.length; i++ ) {
+	acronimyze.push( subs[i].charAt(0) );
 }
 var acronymn3 = acronimyze.join().replace(/,/g, "").toUpperCase();
 } else {
@@ -69,12 +66,11 @@ finalString.push(threee);
 // --------------- FOUR ------------------------ // 
 if (four !== undefined) {
 	if (four.length > 30) {
-var subs = four.split("-"); // turn it to array of substrings
-var filtArray = subs.filter(function(a){return a !== "the" && a !== "of" && a !== "in" && a !== "from" && a !== "by" && a !== "with" && a !== "and" && a !== "or" && a !== "for" && a !== "to" && a !== "at" && a !== "a" });
+var subs = four.split("-").filter(function(a){return a !== "the" && a !== "of" && a !== "in" && a !== "from" && a !== "by" && a !== "with" && a !== "and" && a !== "or" && a !== "for" && a !== "to" && a !== "at" && a !== "a" });
 // return newarr;
 var acronimyze = [];
-for( var i=0; i<filtArray.length; i++ ) {
-	acronimyze.push( filtArray[i].charAt(0) );
+for( var i=0; i<subs.length; i++ ) {
+	acronimyze.push( subs[i].charAt(0) );
 }
 var acronymn4 = acronimyze.join().replace(/,/g, "").toUpperCase();
 } else {
