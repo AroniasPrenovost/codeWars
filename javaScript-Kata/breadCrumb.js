@@ -35,9 +35,7 @@ return {
 // --------------- ONE ------------------------ // 
 if (one !== undefined) {
     if (one.length > 30) {
-        reformat.setVal(one);
-        var subs = reformat.getVal();
-// return newarr;
+var subs = reformat.setVal(one).reformat.getVal();
 var acronimyze = [];
 for( var i=0; i<subs.length; i++ ) {
     acronimyze.push( subs[i].charAt(0) );
@@ -52,9 +50,7 @@ finalString.push(onee);
 // --------------- TWO ------------------------ // 
 if (two !== undefined) {
     if (two.length > 30) {
-        reformat.setVal(two);
-        var subs = reformat.getVal();
-// return newarr;
+        var subs = reformat.setVal(two).reformat.getval();
 var acronimyze = [];
 for( var i=0; i<subs.length; i++ ) {
     acronimyze.push( subs[i].charAt(0) );
@@ -69,9 +65,7 @@ finalString.push(twoo);
 // --------------- THREE ------------------------ // 
 if (three !== undefined) {
     if (three.length > 30) {
-        reformat.setVal(three);
-        var subs = reformat.getVal();
-// return newarr;
+       var subs = reformat.setVal(three).reformat.getVal();
 var acronimyze = [];
 for( var i=0; i<subs.length; i++ ) {
     acronimyze.push( subs[i].charAt(0) );
@@ -86,9 +80,7 @@ finalString.push(threee);
 // --------------- FOUR ------------------------ // 
 if (four !== undefined) {
     if (four.length > 30) {
-        reformat.setVal(four);
-        var subs = reformat.getVal();
-// return newarr;
+        var subs = reformat.setVal(four).reformat.getVal();
 var acronimyze = [];
 for( var i=0; i<subs.length; i++ ) {
     acronimyze.push( subs[i].charAt(0) );
