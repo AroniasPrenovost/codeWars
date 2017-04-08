@@ -14,67 +14,88 @@ var two = arrayElements[1];
 var three = arrayElements[2];
 var four = arrayElements[3];
 var finalString = ["<a href=\"/\">HOME</a>"];
-
+// reformats the string section if it length > 30
+var reformat = (function() {
+//...private
+var arrVar = "";
+// creates a function you can input 
+function setVal(newVal) {
+    arrVar = newVal;
+};
+function getVal() {
+    var subs = arrVar.split("-").filter(function(a){return a !== "the" && a !== "of" && a !== "in" && a !== "from" && a !== "by" && a !== "with" && a !== "and" && a !== "or" && a !== "for" && a !== "to" && a !== "at" && a !== "a" });
+    return subs;     
+}
+// Public api
+return {
+    setVal: setVal,
+    getVal: getVal
+}
+}());
 // --------------- ONE ------------------------ // 
 if (one !== undefined) {
-	if (one.length > 30) {
-var subs = one.split("-").filter(function(a){return a !== "the" && a !== "of" && a !== "in" && a !== "from" && a !== "by" && a !== "with" && a !== "and" && a !== "or" && a !== "for" && a !== "to" && a !== "at" && a !== "a" });
+    if (one.length > 30) {
+        reformat.setVal(one);
+        var subs = reformat.getVal();
 // return newarr;
 var acronimyze = [];
 for( var i=0; i<subs.length; i++ ) {
-	acronimyze.push( subs[i].charAt(0) );
+    acronimyze.push( subs[i].charAt(0) );
 }
 var acronymn1 = acronimyze.join().replace(/,/g, "").toUpperCase();
 } else {
-	var acronymn1 = arrayElements[0].toUpperCase();
+    var acronymn1 = arrayElements[0].toUpperCase();
 } 
 var onee = "<a href=\"/" + one + "/\">" + acronymn1 + "</a>";  // follow this example for formatting
 finalString.push(onee);
 } 
 // --------------- TWO ------------------------ // 
 if (two !== undefined) {
-	if (two.length > 30) {
-var subs = two.split("-").filter(function(a){return a !== "the" && a !== "of" && a !== "in" && a !== "from" && a !== "by" && a !== "with" && a !== "and" && a !== "or" && a !== "for" && a !== "to" && a !== "at" && a !== "a" });
+    if (two.length > 30) {
+        reformat.setVal(two);
+        var subs = reformat.getVal();
 // return newarr;
 var acronimyze = [];
 for( var i=0; i<subs.length; i++ ) {
-	acronimyze.push( subs[i].charAt(0) );
+    acronimyze.push( subs[i].charAt(0) );
 }
 var acronymn2 = acronimyze.join().replace(/,/g, "").toUpperCase();
 } else {
-	var acronymn2 = arrayElements[1].toUpperCase();
+    var acronymn2 = arrayElements[1].toUpperCase();
 } 
 var twoo = "<a href=\"/" + one + "/" + two + "/\">" + acronymn2 + "</a>"
 finalString.push(twoo);
 }
 // --------------- THREE ------------------------ // 
 if (three !== undefined) {
-	if (three.length > 30) {
-var subs = three.split("-").filter(function(a){return a !== "the" && a !== "of" && a !== "in" && a !== "from" && a !== "by" && a !== "with" && a !== "and" && a !== "or" && a !== "for" && a !== "to" && a !== "at" && a !== "a" });
+    if (three.length > 30) {
+        reformat.setVal(three);
+        var subs = reformat.getVal();
 // return newarr;
 var acronimyze = [];
 for( var i=0; i<subs.length; i++ ) {
-	acronimyze.push( subs[i].charAt(0) );
+    acronimyze.push( subs[i].charAt(0) );
 }
 var acronymn3 = acronimyze.join().replace(/,/g, "").toUpperCase();
 } else {
-	var acronymn3 = arrayElements[2].toUpperCase();
+    var acronymn3 = arrayElements[2].toUpperCase();
 } 
 var threee = "<a href=\"/" + one + "/" + two + "/" + three + "/\">" + acronymn3 + "</a>"
 finalString.push(threee);
 }
 // --------------- FOUR ------------------------ // 
 if (four !== undefined) {
-	if (four.length > 30) {
-var subs = four.split("-").filter(function(a){return a !== "the" && a !== "of" && a !== "in" && a !== "from" && a !== "by" && a !== "with" && a !== "and" && a !== "or" && a !== "for" && a !== "to" && a !== "at" && a !== "a" });
+    if (four.length > 30) {
+        reformat.setVal(four);
+        var subs = reformat.getVal();
 // return newarr;
 var acronimyze = [];
 for( var i=0; i<subs.length; i++ ) {
-	acronimyze.push( subs[i].charAt(0) );
+    acronimyze.push( subs[i].charAt(0) );
 }
 var acronymn4 = acronimyze.join().replace(/,/g, "").toUpperCase();
 } else {
-	var acronymn4 = arrayElements[3].toUpperCase();
+    var acronymn4 = arrayElements[3].toUpperCase();
 } 
 var fourr = "<a href=\"/" + one + "/" + two + "/" + three + "/" + four + "/\">" + acronymn4 + "</a>"
 finalString.push(fourr);

@@ -65,20 +65,18 @@ function dirReduc(arr){
 			if (arraycontainsSOUTH === true) {
 				var search_term = "SOUTH";
 				for (var i=arr.length-1; i>=0; i--) {
-					if (arr[i] === search_term) {
-						arr.splice(i, 1);
-var index = arr.indexOf("NORTH"); // removes first instance of "NORTH"
-arr.splice(index, 1);
-break;       // Uncomment  if only the first term has to be removed
-		}
-	}
-} else {
-empty.push(arr[i]); // storage for dead data 
-	} // below here is where we add new code
-} // the major for loop 
-countE++;    
-	} // closeing of for loop
-return arr; // this might be where that catch all thing is 
+				if (arr[i] === search_term) {
+				arr.splice(i, 1);
+				var index = arr.indexOf("NORTH"); // removes first instance of "NORTH"
+				arr.splice(index, 1);
+				break;       // Uncomment  if only the first term has to be removed
+			}	
+	} 
+countE++; 
+}  
+	} 
+}
+return arr; 
 }
 dirReduc(["NORTH", "NORTH", "SOUTH", "EAST", "EAST", "WEST", "WEST"]);
 
