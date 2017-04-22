@@ -20,18 +20,20 @@ for(var i = 0; i < arr.length; ++i){
   	arr.splice(arr[i], 2);  
 }
 // removes duplicate directions 
-	if (arr[i] == arr[i+1]) {
+	while (arr[i] !== arr[i+1]) {
+  	var arr = arr; 
+}
+
+// removes duplicate directions 
+	while (arr[i] === arr[i+1]) {
   	arr.splice(arr[i], 1);  
 }
 
-while (arr[i] !== arr[i+1]) {
-arr == arr;
-}
 
 } // close for loop 
 	return arr; 
 }
-dirReduc(['EAST', 'WEST', 'SOUTH', 'NORTH', 'NORTH', 'EAST', 'WEST', 'EAST', 'SOUTH', 'NORTH']);
+dirReduc(['EAST', 'WEST', 'NORTH', 'SOUTH', 'SOUTH', 'WEST', 'WEST', 'EAST', 'SOUTH', 'NORTH']);
 
 
 
