@@ -39,5 +39,5 @@ function meters(x) {
 		return x + " Meter";
 	}
 }
-meters(4539922394836);
+meters(1240);
 // returns "4.539922394836 Terameters"

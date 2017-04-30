@@ -85,7 +85,6 @@ for(var i = 0; i < vertRowIntegers.length; i++){
 		return true
 	}	
 }
-
 }
 validSolution([[6,4,9,5,2,7,8,1,3],
 	[3,2,5,8,4,1,7,6,9],
