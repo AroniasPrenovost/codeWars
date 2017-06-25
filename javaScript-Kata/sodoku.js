@@ -54,7 +54,6 @@ for (var i = 0; i < arrS.length + 1 - 1; i++) {
 		results.push(sorted_arr[i]);
 	}
 }
-
 if (results.length > 0) {
 	return false;
 } else {
@@ -83,8 +82,8 @@ for(var i = 0; i < vertRowIntegers.length; i++){
 		return false;
 	} else {
 		return true
-	}	
-}
+		}	
+	}
 }
 validSolution([[6,4,9,5,2,7,8,1,3],
 	[3,2,5,8,4,1,7,6,9],
