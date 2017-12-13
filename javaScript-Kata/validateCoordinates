@@ -1,0 +1,73 @@
+
+/* 
+Create a function that will validate if given parameters are valid geographical coordinates.
+
+Valid coordinates look like the following: "23.32353342, -32.543534534". The return value should be either true or false.
+
+Latitude (which is first float) can be between 0 and 90, positive or negative. Longitude (which is second float) can be between 0 and 180, positive or negative.
+
+Coordinates can only contain digits, or one of the following symbols (including space after comma) -, .
+
+There should be no space between the minus "-" sign and the digit after it.
+*/
+
+function isValidCoordinates(coordinates) {
+  var raw_coordinates = coordinates,
+    commas = coordinates.split(',').length - 1,
+    periods = coordinates.split('.').length - 1,
+    dashes = coordinates.split('-').length - 1;
+
+  // disqualifies letters, +1` commas, +2 periods, and '- ' occurences
+  if (
+    /[a-z]/i.test(coordinates) === true ||
+    commas > 1 ||
+    periods > 2 ||
+    dashes > 2 ||
+    /- /i.test(raw_coordinates) === true
+  ) {
+    return false;
+  }
+
+  // 2 coordinates
+  if (commas === 1) {
+    var coords = coordinates.split(',');
+    var coord1 = coords[0];
+    var coord2 = coords[1].trim();
+
+    // remove first dashes, if present
+    if (coord1.charAt(0) === '-') {
+      coord1 = coord1.substr(1);
+    }
+    if (coord2.charAt(0) === '-') {
+      coord2 = coord2.substr(1);
+    }
+
+    // count remaining dashes, if any
+    var dashes12 = coord1.split('-').length - 1;
+    var dashes22 = coord2.split('-').length - 1;
+
+    if (dashes12 > 0) {
+      return false;
+    }
+
+    if (dashes22 > 0) {
+      return false;
+    }
+
+    if (coord1 > 90 || coord1 < -90 || coord2 > 180 || coord2 < -180) {
+      return false;
+    }
+    return true;
+  }
+
+  // 1 coordinate
+  if (commas === 0) {
+    dashes1 = coordinates.split('-').length - 1;
+    if (raw_coordinates > 180 || raw_coordinates < -180 || dashes1 > 1) {
+      return false;
+    }
+    return true;
+  }
+}
+
+isValidCoordinates('-25, 32');
