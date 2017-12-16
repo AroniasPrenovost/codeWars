@@ -1,0 +1,33 @@
+function middlePermutation(s) {
+  var word = s;
+  // var group_length = word.length - 1; // letter section should have this many variations
+  var final_list = [word]; // finalList.push for every good word
+  var temp_letters = s.split('');
+
+  function re_order(array) {
+    array.push(array[0]);
+    array.shift();
+    return array;
+  }
+
+  for (var i = 0; i < word.length * word.length; i++) {
+    // iterate through 4x for each letter
+    var temp_letter = temp_letters[0];
+    temp_letters.shift();
+    for (var y = 0; y < 900; y++) {
+      var new_word = re_order(temp_letters).join('');
+      new_word = temp_letter + new_word;
+      if (final_list.includes(new_word) === false) {
+        final_list.push(new_word);
+      }
+    }
+    temp_letters.push(temp_letter);
+  }
+
+  final_list = final_list.sort('');
+
+  var median = final_list.length - final_list.length / 2 - 1;
+  console.log(final_list);
+  return final_list[median];
+}
+middlePermutation('abcd');
