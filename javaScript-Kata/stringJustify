@@ -1,0 +1,159 @@
+var justify = function(str, len) {
+  if (str.length < len) {
+    return str;
+  }
+  var line_length = len;
+  var raw_words = str.split(' ');
+  var raw_length = raw_words.length;
+  var collection = [];
+  var raw_collection = [];
+
+  // must add first word so there is something to check against
+  collection.push(raw_words[0] + ' ');
+  raw_words.shift();
+  if (raw_words === []) {
+    return collection;
+  }
+  var final_string = collection.join('');
+  var space_available = line_length - final_string.length;
+
+  for (var i = 0; i < raw_length; i++) {
+    final_string = collection.join('');
+
+    var anticipated_length = final_string.length + raw_words[0].length;
+    if (
+      anticipated_length > line_length ||
+      anticipated_length === line_length
+    ) {
+      raw_collection.push([final_string]);
+      final_string = '';
+      anticipated_length = 0;
+      collection = [];
+    }
+
+    collection.push(raw_words[0] + ' ');
+    if (raw_words.length !== 1) {
+      raw_words.shift();
+    }
+  }
+
+  if (raw_words.length === 1) {
+    raw_collection.push(raw_words);
+  }
+
+  var og_strings = [];
+  var string_lengths = [];
+  var space_instances = [];
+  for (var k = 0; k < raw_collection.length; k++) {
+    og_strings.push(raw_collection[[k]].toString().replace(/\s+$/, ''));
+    var string = raw_collection[[k]].toString().replace(/\s+$/, '');
+    string_lengths.push(string.length);
+    space_instances.push((string.match(new RegExp(' ', 'g')) || []).length);
+  }
+
+  // find difference between length and sentance length
+  for (var p = 0; p < string_lengths.length; p++) {
+    string_lengths[p] = len - string_lengths[p];
+  }
+
+  console.log(og_strings);
+  // shuffle function
+  function shuffle(array) {
+    var currentIndex = array.length,
+      temporaryValue,
+      randomIndex;
+
+    // While there remain elementsd to shuffle...
+    while (0 !== currentIndex) {
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  }
+
+  // reduce function
+  function add(aaa, bbb) {
+    return aaa + bbb;
+  }
+
+  for (var w = 0; w < 1 /* og_strings.length */; w++) {
+    var decon_string = og_strings[w].split('');
+    console.log(' --------- decon string ');
+    console.log(decon_string);
+    console.log(' --------- length of decon string ');
+    console.log(decon_string.length + " ----");
+
+    // figure out indexes
+    var indices = [];
+    for (var o = 0; o < decon_string.length; o++) {
+      if (decon_string[o] === ' ') indices.push(o);
+    }
+    
+    var number_of_indices = indices.length; // 3 in this case
+    console.log(number_of_indices + ' number of indices');
+
+    // find factors
+    var factors = '0';
+    var num = string_lengths[w];
+    console.log(num + ' num');
+    for (var ii = 1; ii <= num; ii++) {
+      if (num % ii === 0) {
+        factors += ',' + ii;
+      }
+    }
+
+    factors = factors.split(',').map(parseFloat);
+    factors = factors.sort(function(a, b) {
+      return b - a;
+    });
+    var hold_factors = factors; // returns factors to original state
+
+    for (var mm = 0; mm < factors.length; mm++) {
+      if (factors[mm] >= string_lengths[w]) {
+        factors.splice([mm], 1);
+        // factors[mm] = '-';
+        // remove all '-'s
+      }
+    }
+console.log(factors);
+    // find final factors
+    var final_factors = [];
+    for (var r = 0; r < 100 /* increase this # */; r++) {
+      var sum = 0;
+      factors = hold_factors;
+      shuffle(factors);
+
+      factors = factors.slice(0, number_of_indices);
+     sum = factors.reduce(add, 0);
+     console.log(sum + ' ysyyssy')
+     
+              if (num % 2 !== 0) {
+//  console.log('yessss')
+}
+
+      if (sum === num) {
+
+        final_factors.push(factors);
+        final_factors.push('test');
+        console.log(sum + ' yes');
+        break;
+      }
+  
+
+    }
+
+    console.log(final_factors);
+
+    console.log(decon_string.join(''));
+  } // outer
+};
+
+justify(
+  'This is a test setnatce and all of the other stuff is also just a twst so dont worry about it or even bother to write up a big thig.',
+  20
+);
