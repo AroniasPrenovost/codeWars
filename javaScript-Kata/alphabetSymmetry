@@ -1,0 +1,19 @@
+function alphaSymmetry(input) {
+	var lengths = [];
+	var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+	console.log(typeof input);
+	for (var i = 0; i < input.length; i++) {
+		var inputAlpha = input[i].toLowerCase();
+		inputAlpha.split('');
+		var count = 0;
+		for (var x = 0; x < inputAlpha.length; x++) {
+			if (inputAlpha[x] === alphabet[x]) {
+				count += 1;
+			}
+		}
+		lengths.push(count);
+	}
+	console.log(lengths);
+}
+
+alphaSymmetry(['cdefghijklmnopqrstuvwxyz', 'abc', 'Acd']);
