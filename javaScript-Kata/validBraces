@@ -1,0 +1,14 @@
+function validBraces(braces) {
+	var i = 0;
+	while (i < 200) {
+	  braces = braces.replace(/\(\)|\[\]|\{\}/g,"");
+		i++;
+	}
+	if (braces === '') {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+validBraces('([{}])[]}([{}])([{}])([{}])([{}])');
